@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Security.Permissions;
 using BepInEx;
 using BepInEx.Configuration;
-using LethalLib.Modules;
+using LethalBestiary.Modules;
 using MonoMod.Cil;
 using MonoMod.RuntimeDetour;
 using UnityEngine;
@@ -15,17 +15,15 @@ using UnityEngine;
 #endregion
 
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
-namespace LethalLib;
+namespace LethalBestiary;
 
 [BepInPlugin(ModGUID, ModName, ModVersion)]
 //[BepInDependency("LethalExpansion", BepInDependency.DependencyFlags.SoftDependency)]
 public class Plugin : BaseUnityPlugin
 {
-    public const string ModGUID = "Xilef.LethalBestiary";//MyPluginInfo.PLUGIN_GUID;
+    public const string ModGUID = "Xilef."+MyPluginInfo.PLUGIN_GUID;//MyPluginInfo.PLUGIN_GUID;
     public const string ModName = MyPluginInfo.PLUGIN_NAME;
     public const string ModVersion = MyPluginInfo.PLUGIN_VERSION;
-
-    public static AssetBundle MainAssets;
 
     public static BepInEx.Logging.ManualLogSource logger;
     public static ConfigFile config;
@@ -43,8 +41,6 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"LethalLib loaded!!");
 
         extendedLogging = Config.Bind("General", "ExtendedLogging", false, "Enable extended logging");
-
-        MainAssets = AssetBundle.LoadFromFile(Path.Combine(Path.GetDirectoryName(Info.Location)!, "lethallib"));
 
         new ILHook(typeof(StackTrace).GetMethod("AddFrames", BindingFlags.Instance | BindingFlags.NonPublic), IlHook);
         Enemies.Init();

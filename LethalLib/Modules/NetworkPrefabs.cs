@@ -1,4 +1,3 @@
-/*
 #region
 
 using System;
@@ -11,7 +10,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LethalLib.Modules;
+namespace LethalBestiary.Modules;
 
 public class NetworkPrefabs
 {
@@ -34,39 +33,6 @@ public class NetworkPrefabs
             _networkPrefabs.Add(prefab);
     }
 
-    /// <summary>
-    /// Creates a network prefab programmatically and registers it with the network manager.
-    /// Credit to Day and Xilo.
-    /// </summary>
-    public static GameObject CreateNetworkPrefab(string name)
-    {
-        var prefab = PrefabUtils.CreatePrefab(name);
-        prefab.AddComponent<NetworkObject>();
-
-        var hash = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(Assembly.GetCallingAssembly().GetName().Name + name));
-
-        prefab.GetComponent<NetworkObject>().GlobalObjectIdHash = BitConverter.ToUInt32(hash, 0);
-
-        RegisterNetworkPrefab(prefab);
-        return prefab;
-    }
-
-    /// <summary>
-    /// Clones a network prefab programmatically and registers it with the network manager.
-    /// Credit to Day and Xilo.
-    /// </summary>
-    public static GameObject CloneNetworkPrefab(GameObject prefabToClone, string newName = null)
-    {
-        var prefab = PrefabUtils.ClonePrefab(prefabToClone, newName);
-
-        var hash = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(Assembly.GetCallingAssembly().GetName().Name + prefab.name));
-
-        prefab.GetComponent<NetworkObject>().GlobalObjectIdHash = BitConverter.ToUInt32(hash, 0);
-
-        RegisterNetworkPrefab(prefab);
-        return prefab;
-    }
-
 
     private static void GameNetworkManager_Start(On.GameNetworkManager.orig_Start orig, GameNetworkManager self)
     {
@@ -80,4 +46,3 @@ public class NetworkPrefabs
 
     }
 }
-*/

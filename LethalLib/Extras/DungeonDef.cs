@@ -5,7 +5,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LethalLib.Extras;
+namespace LethalBestiary.Extras;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/DungeonDef")]
 public class DungeonDef : ScriptableObject

@@ -4,7 +4,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LethalLib.Extras;
+namespace LethalBestiary.Extras;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/SpawnableOutsideObject")]
 public class SpawnableOutsideObjectDef : ScriptableObject

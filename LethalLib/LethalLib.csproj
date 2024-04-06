@@ -3,13 +3,14 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <AssemblyName>LethalLib</AssemblyName>
-        <Product>LethalLib</Product>
-        <Description>Content-addition API for Lethal Company</Description>
+        <AssemblyName>LethalBestiary</AssemblyName>
+        <Product>LethalBestiary</Product>
+        <Description>Lightweight version for Lethal Lib for registering new enemies!</Description>
 
-        <PackageId>Evaisa.LethalLib</PackageId>
+        <PackageId>Xilef992.LethalBestiary</PackageId>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <IsPackable>true</IsPackable>
+        <PlainVersion>1.0.0</PlainVersion>
     </PropertyGroup>
 
     <!-- Extraneous .nupkg includes -->
@@ -56,6 +57,29 @@
         <Reference Include="MMHOOK_Assembly-CSharp">
             <HintPath>$(ProjectDir)../lib/MMHOOK_Assembly-CSharp.dll</HintPath>
         </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="obj\Release\netstandard2.1\.NETStandard,Version=v2.1.AssemblyAttributes.cs" />
+      <Compile Include="obj\Release\netstandard2.1\LethalLib.AssemblyInfo.cs" />
+      <Compile Include="obj\Release\netstandard2.1\MyPluginInfo.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\Release\netstandard2.1\LethalLib.AssemblyInfoInputs.cache" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.assets.cache" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.csproj.AssemblyReference.cache" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.csproj.CoreCompileInputs.cache" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.csproj.FileListAbsolute.txt" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.csproj.Up2Date" />
+      <Content Include="obj\Release\netstandard2.1\LethalBestiary.dll" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.GeneratedMSBuildEditorConfig.editorconfig" />
+      <Content Include="obj\Release\netstandard2.1\LethalBestiary.pdb" />
+      <Content Include="obj\Release\netstandard2.1\LethalLib.sourcelink.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="obj\Release\netstandard2.1\publicized\" />
     </ItemGroup>
 
     <Target Name="SetPluginVersion" BeforeTargets="AddGeneratedFile" DependsOnTargets="MinVer">

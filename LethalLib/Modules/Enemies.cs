@@ -8,7 +8,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LethalLib.Modules;
+namespace LethalBestiary.Modules;
 
 public class Enemies
 {

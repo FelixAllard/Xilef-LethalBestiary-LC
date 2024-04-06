@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 #endregion
 
-namespace LethalLib.Modules;
+namespace LethalBestiary.Modules;
 
 public class Utilities
 {

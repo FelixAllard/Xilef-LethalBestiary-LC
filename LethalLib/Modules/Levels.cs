@@ -6,7 +6,7 @@ using System.Linq;
 
 #endregion
 
-namespace LethalLib.Modules;
+namespace LethalBestiary.Modules;
 
 public class Levels
 {

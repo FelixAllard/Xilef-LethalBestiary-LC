@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 #endregion
 
-namespace LethalLib.Modules;
+namespace LethalBestiary.Modules;
 
 public class PrefabUtils
 {

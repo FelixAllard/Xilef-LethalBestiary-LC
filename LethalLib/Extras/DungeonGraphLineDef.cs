@@ -5,7 +5,7 @@ using UnityEngine;
 
 #endregion
 
-namespace LethalLib.Extras;
+namespace LethalBestiary.Extras;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/DungeonGraphLine")]
 public class DungeonGraphLineDef : ScriptableObject

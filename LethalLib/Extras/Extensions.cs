@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 
 #endregion
 
-namespace LethalLib.Extras;
+namespace LethalBestiary.Extras;
 
 public static class ScriptableObjectExtension
 {
