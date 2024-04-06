@@ -6,8 +6,8 @@
         <IsPackable>false</IsPackable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/EvaisaDev/LethalLib</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/EvaisaDev/LethalLib</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/FelixAllard/Xilef-LethalBestiary-LC</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/FelixAllard/Xilef-LethalBestiary-LC</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
