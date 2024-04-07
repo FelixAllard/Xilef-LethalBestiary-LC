@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <VersionBestiary>1.1.0</VersionBestiary>
+        <VersionBestiary>1.1.1</VersionBestiary>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>LethalBestiary</AssemblyName>

@@ -11,6 +11,7 @@ using LethalBestiary.Modules;
 using MonoMod.Cil;
 using MonoMod.RuntimeDetour;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 #endregion
 
@@ -52,12 +53,19 @@ public class Plugin : BaseUnityPlugin
 
     private void IlHook(ILContext il)
     {
-        var cursor = new ILCursor(il);
-        cursor.GotoNext(
-            x => x.MatchCallvirt(typeof(StackFrame).GetMethod("GetFileLineNumber", BindingFlags.Instance | BindingFlags.Public))
-        );
-        cursor.RemoveRange(2);
-        cursor.EmitDelegate<Func<StackFrame, string>>(GetLineOrIL);
+        try
+        {
+            var cursor = new ILCursor(il);
+            cursor.GotoNext(
+                x => x.MatchCallvirt(typeof(StackFrame).GetMethod("GetFileLineNumber", BindingFlags.Instance | BindingFlags.Public))
+            );
+            cursor.RemoveRange(2);
+            cursor.EmitDelegate<Func<StackFrame, string>>(GetLineOrIL);
+        }
+        catch (Exception e)
+        {
+            Logger.LogInfo("ILHook already applied!");
+        }
     }
 
     private static string GetLineOrIL(StackFrame instance)
