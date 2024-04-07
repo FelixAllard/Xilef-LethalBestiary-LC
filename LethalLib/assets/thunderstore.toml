@@ -7,7 +7,7 @@ repository = "https://thunderstore.io"
 [package]
 namespace = "TheWeavers"
 name = "LethalBestiary"
-description = "Personal modding tools for Lethal Company"
+description = "A library for registering new monsters which brings a bunch of useful methods for monsters!"
 websiteUrl = "https://github.com/FelixAllard/Xilef-LethalBestiary-LC"
 containsNsfwContent = false
 [package.dependencies]
@@ -15,13 +15,13 @@ BepInEx-BepInExPack = "5.4.2100"
 Evaisa-HookGenPatcher = "0.0.5"
 
 [build]
-icon = "icons/lethal-lib.png"
+icon = "icons/LethalBestiary.png"
 readme = "../../README.md"
 outdir = "../dist"
 
 [[build.copy]]
 source = "../bin/Release/netstandard2.1/LethalBestiary.dll"
-target = "plugins/LethalLib/"
+target = "plugins/LethalBestiary/"
 
 [[build.copy]]
 source = "../../CHANGELOG.md"
@@ -34,6 +34,6 @@ target = "/"
 [publish]
 communities = [ "lethal-company", ]
 [publish.categories]
-lethal-company = [ "libraries", "tools", "mods", "bepinex", ]
+lethal-company = [ "libraries", "tools", "mods", "monsters", "bepinex", ]
 
 

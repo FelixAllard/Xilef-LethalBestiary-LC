@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <VersionBestiary>1.1.0</VersionBestiary>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>LethalBestiary</AssemblyName>
@@ -10,7 +11,6 @@
         <PackageId>Xilef992.LethalBestiary</PackageId>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <IsPackable>true</IsPackable>
-        <PlainVersion>1.0.0</PlainVersion>
     </PropertyGroup>
 
     <!-- Extraneous .nupkg includes -->
@@ -81,10 +81,10 @@
     <ItemGroup>
       <Folder Include="obj\Release\netstandard2.1\publicized\" />
     </ItemGroup>
-
+    <!--$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)-->
     <Target Name="SetPluginVersion" BeforeTargets="AddGeneratedFile" DependsOnTargets="MinVer">
         <PropertyGroup>
-            <PlainVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)</PlainVersion>
+            <PlainVersion>$(VersionBestiary)</PlainVersion>
             <BepInExPluginVersion>$(PlainVersion)</BepInExPluginVersion>
         </PropertyGroup>
     </Target>

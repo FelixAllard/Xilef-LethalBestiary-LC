@@ -38,13 +38,15 @@ public class Plugin : BaseUnityPlugin
         config = Config;
         logger = Logger;
 
-        Logger.LogInfo($"LethalLib loaded!!");
+        Logger.LogInfo($"LethalBestiary Is loading ...");
 
         extendedLogging = Config.Bind("General", "ExtendedLogging", false, "Enable extended logging");
 
         new ILHook(typeof(StackTrace).GetMethod("AddFrames", BindingFlags.Instance | BindingFlags.NonPublic), IlHook);
         Enemies.Init();
         Utilities.Init();
+
+        Logger.LogInfo($"LethalBestiary Is Loaded");
 
     }
 
